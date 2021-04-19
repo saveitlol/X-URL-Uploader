@@ -285,7 +285,7 @@ async def youtube_dl_call_back(bot, update):
                     )
                 )
                 document_f = await document.forward(Config.LOG_CHANNEL)
-                await document_f.reply_text("Name: " + str(update.from_user.first_name0 + "\nUser ID: " + str(update.from_user.id))
+                await document_f.reply_text("Name: " + str(update.from_user.first_name) + "\nUser ID: " + str(update.from_user.id))
             elif tg_send_type == "vm":
                 video_note = await bot.send_video_note(
                     chat_id=update.message.chat.id,
