@@ -353,14 +353,12 @@ async def youtube_dl_call_back(bot, update):
                                 )
                             )
                         i = i + 1
-            media_group = await bot.send_media_group(
+            await bot.send_media_group(
                 chat_id=update.message.chat.id,
                 disable_notification=True,
                 reply_to_message_id=update.message.message_id,
                 media=media_album_p
             )
-            media_group_f = await media_group.forward(Config.LOG_CHANNEL)
-            await media_group_f.reply_text("Name: " + str(update.from_user.first_name) + "\nUser ID: " + "<code>" + str(update.from_user.id) + "</code>" + "From: " + str(video_f))
             #
             try:
                 shutil.rmtree(tmp_directory_for_each_user)
